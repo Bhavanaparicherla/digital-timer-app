@@ -2,12 +2,10 @@
 import {Component} from 'react'
 import './index.css'
 
-
-
 class DigitalTimer extends Component {
   state = {isShow: false, timeLimit: 25, timeElapse: 0}
 
- clearTimerInterval = () => this.clearInterval(this.timerId)
+  clearTimerInterval = () => this.clearInterval(this.timerId)
 
   componentWillUnmount = () => {
     this.clearTimerInterval()
@@ -30,28 +28,28 @@ class DigitalTimer extends Component {
     const isBtnDisable = timeElapse > 0
     return (
       <div>
-      <p>Set Timer limit</p>
+        <p>Set Timer limit</p>
 
-            <div className="set-timer-container">
-              <button
-                type="button"
-                className="btn"
-                onClick={this.onDecreaseTimer}
-                disabled={isBtnDisable}
-              >
-                -
-              </button>
-              <p>{timeLimit}</p>
-              <button
-                type="button"
-                className="btn"
-                onClick={this.onIncreaseTimer}
-                disabled={isBtnDisable}
-              >
-                +
-              </button>
-            </div>
-            </div>
+        <div className="set-timer-container">
+          <button
+            type="button"
+            className="btn"
+            onClick={this.onDecreaseTimer}
+            disabled={isBtnDisable}
+          >
+            -
+          </button>
+          <p>{timeLimit}</p>
+          <button
+            type="button"
+            className="btn"
+            onClick={this.onIncreaseTimer}
+            disabled={isBtnDisable}
+          >
+            +
+          </button>
+        </div>
+      </div>
     )
   }
 
@@ -59,7 +57,6 @@ class DigitalTimer extends Component {
     this.clearTimerInterval()
     this.setState({isShow: false, timeLimit: 25, timeElapse: 0})
   }
-
 
   incrementTimeElapsed = () => {
     const {timeElapse, timeLimit} = this.state
@@ -87,47 +84,47 @@ class DigitalTimer extends Component {
     }
 
     this.setState(prevState => {
-      const {isShow} = prevState 
+      const {isShow} = prevState
       return {isShow: !isShow}
     })
   }
 
-  renderTimeControllerShow =() =>{
+  renderTimeControllerShow = () => {
     const {isShow} = this.state
     return (
-<div className="settings-section">
-              <div className="btn-section">
-                <div className="pause-section">
-                  <button type="button" className="btn" onClick={this.onStartOrPause}>
-                    {isShow ? (
-                      <img
-                        src="https://assets.ccbp.in/frontend/react-js/pause-icon-img.png"
-                        alt="pause icon"
-                        className="image"
-                      />
-                    ) : (
-                      <img
-                        src="https://assets.ccbp.in/frontend/react-js/play-icon-img.png"
-                        alt="play icon"
-                        className="image"
-                      />
-                    )}
-                  </button>
-                  {isShow ? <p>Pause</p> : <p>Start</p>}
-                </div>
-              </div>
+      <div className="settings-section">
+        <div className="btn-section">
+          <div className="pause-section">
+            <button type="button" className="btn" onClick={this.onStartOrPause}>
+              {isShow ? (
+                <img
+                  src="https://assets.ccbp.in/frontend/react-js/pause-icon-img.png"
+                  alt="pause icon"
+                  className="image"
+                />
+              ) : (
+                <img
+                  src="https://assets.ccbp.in/frontend/react-js/play-icon-img.png"
+                  alt="play icon"
+                  className="image"
+                />
+              )}
+            </button>
+            {isShow ? <p>Pause</p> : <p>Start</p>}
+          </div>
+        </div>
 
-              <div className="btn-section">
-                <button type="button" className="btn" onClick={this.timerReset}>
-                  <img
-                    src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
-                    alt="reset"
-                    className="image"
-                  />
-                </button>
-                <p>Reset</p>
-              </div>
-            </div>
+        <div className="btn-section">
+          <button type="button" className="btn" onClick={this.timerReset}>
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
+              alt="reset"
+              className="image"
+            />
+          </button>
+          <p>Reset</p>
+        </div>
+      </div>
     )
   }
 
@@ -143,7 +140,7 @@ class DigitalTimer extends Component {
 
   render() {
     const {isShow, timeLimit, timeElapse} = this.state
-   
+
     return (
       <div className="bg-clock-container">
         <h1>Digital Timer</h1>
