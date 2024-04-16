@@ -1,0 +1,80 @@
+/* Write your CSS here */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Roboto';
+}
+
+.bg-clock-container {
+  background-image: linear-gradient(to right, #ffffff, #cffcf1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+}
+
+.play-section {
+  display: flex;
+  align-items: center;
+}
+.pause-section {
+  display: flex;
+  align-items: center;
+}
+.clock-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
+  background-size: cover;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.set-timer-container {
+  display: flex;
+  margin-top: 15px;
+}
+
+.settings-section {
+  display: flex;
+  align-items: center;
+}
+.btn-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.timer-container {
+  background-color: #ffffff;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-settings--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  width: 30px;
+}
+.btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
